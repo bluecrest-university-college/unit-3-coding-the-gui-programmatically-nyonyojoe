@@ -25,11 +25,12 @@ public class MainActivity extends AppCompatActivity {
     private Button dot;
     private TextView info;
     private TextView result;
+    private Button equals;
     private final char Addition = '+';
     private final char Subtraction = '-';
     private final char Division = '/';
     private final char Multiplication ='*';
-    private final char equal ='=';
+    private final char Equal = '=';
     private double value1 = Double.NaN;
     private double value2;
     private char Act;
@@ -150,6 +151,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        equals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                solve();
+                Act = Equal;
+                result.setText(String.valueOf(value1) + String.valueOf(value2)+ "=");
+            }
+        });
+
 
 
 
@@ -176,6 +186,8 @@ public class MainActivity extends AppCompatActivity {
         info = (TextView) findViewById(R.id.ctrlID);
         result = (TextView) findViewById(R.id.ResultID);
         dot = (Button) findViewById(R.id.btndot);
+        equals = (Button) findViewById(R.id.btnequal);
+
 
 
     }
